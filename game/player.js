@@ -1,3 +1,4 @@
+
 var Player = function(name, color, position, direction) {
 
     this.name = name;
@@ -25,7 +26,12 @@ Player.prototype.dead = function () {
         //Nettoyage de la div container
         $("#container").html("");
         jQuery('#'+this.name+' >.life').text("Tu es mort !");
-        init();
+        // player1.life -= 1;
+        if (player1.life == 0)
+            init();
+        else
+            creating_without_new();
+
 }
 
 Player.prototype.accelerate = function (distance) {
